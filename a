@@ -1,3 +1,21 @@
-hyzam
-change1
-change2
+#!/bin/bash
+if test $# -eq 2
+then echo "There are two arguments"
+else
+	echo "There should be two arguments"
+fi
+if [ -f "$1" ]
+	then echo "File exists"
+else
+		echo "File doesn't exist"
+	fi
+	
+if test $(cat  $1 | grep $2 | wc -w) -gt 0
+then 
+	echo "Username already exists"
+else
+	echo $2>>$1
+	echo "Name added!"
+fi
+	
+ 
